@@ -7,6 +7,7 @@ export type BoxMotionProps = Omit<ChakraProps, keyof MotionProps> &
     as?: React.ElementType
   }
 
+// @ts-ignore
 export const BoxMotion = motion(
   forwardRef<ChakraProps, 'div'>((props, ref) => {
     return <chakra.div ref={ref as any} {...props} />

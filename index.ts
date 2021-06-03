@@ -1,31 +1,15 @@
-import BoxColorMode from './src/components/BoxColorMode';
-import BoxFile from './src/components/BoxFile';
-import { BoxMotion } from './src/components/BoxMotion';
-import BoxOverlay from './src/components/BoxOverlay';
-import BoxOverlaySpinner from './src/components/BoxOverlaySpinner';
-import BoxScrollMini from './src/components/BoxScrollMini';
-import Col from './src/components/Col';
-import ContainerScreen from './src/components/ContainerScreen';
-import SlideUpGroupHover from './src/components/GroupHover/SlideUpGroupHover';
-import SlideDownGroupHover from './src/components/GroupHover/SlideDownGroupHover';
-import SlideLeftGroupHover from './src/components/GroupHover/SlideLeftGroupHover';
-import SlideRightGroupHover from './src/components/GroupHover/SlideRightGroupHover';
-import Row from './src/components/Row';
-import TextMini from './src/components/TextMini';
-
-export const FSComponent = {
-  BoxColorMode,
-  BoxFile,
-  BoxMotion,
-  BoxOverlay,
-  BoxOverlaySpinner,
-  BoxScrollMini,
-  ContainerScreen,
-  SlideUpGroupHover,
-  SlideDownGroupHover,
-  SlideLeftGroupHover,
-  SlideRightGroupHover,
-  TextMini,
-  Col,
-  Row,
-}
+export { default as BoxColorMode } from './src/components/BoxColorMode'
+export { default as BoxFile } from './src/components/BoxFile'
+export { BoxMotion } from './src/components/BoxMotion'
+export { default as BoxOverlay } from './src/components/BoxOverlay'
+export { default as BoxOverlaySpinner } from './src/components/BoxOverlaySpinner'
+export { default as BoxScrollMini } from './src/components/BoxScrollMini'
+export { default as Col } from './src/components/Col'
+export { default as ContainerScreen } from './src/components/ContainerScreen'
+export { default as SlideUpGroupHover } from './src/components/GroupHover/SlideUpGroupHover'
+export { default as SlideDownGroupHover } from './src/components/GroupHover/SlideDownGroupHover'
+export { default as SlideLeftGroupHover } from './src/components/GroupHover/SlideLeftGroupHover'
+export { default as SlideRightGroupHover } from './src/components/GroupHover/SlideRightGroupHover'
+export { default as Row } from './src/components/Row'
+export { default as TextMini } from './src/components/TextMini'
+export { default as FileSize } from './src/components/FileSize'

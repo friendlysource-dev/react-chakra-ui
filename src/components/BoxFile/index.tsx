@@ -30,7 +30,7 @@ const BoxFile: React.FC<BoxFileProps> = ({ input, children, ...rest }) => {
         overflow="hidden"
         {...input}
       />
-      <Box {...rest}>{children}</Box>
+      <>{children}</>
     </Box>
   )
 }
