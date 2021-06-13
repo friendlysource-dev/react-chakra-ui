@@ -13,9 +13,7 @@ import { Form } from '@unform/web'
 import { FormHandles, FormHelpers } from '@unform/core'
 import { BoxProps } from '@chakra-ui/layout'
 import * as Yup from 'yup'
-import BoxOverlaySpinner from '../components/BoxOverlaySpinner'
-import Col from '../components/Col'
-import BoxOverlay from '../components/BoxOverlay'
+import { BoxOverlaySpinner, Col, BoxOverlay } from '../components'
 
 interface FormContextProps {
   variant: string
