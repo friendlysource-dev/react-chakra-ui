@@ -15,5 +15,5 @@ Dev Dependencies:
 
 ```bash
 # yarn
-yarn add @types/file-size @types/
+yarn add @types/file-size
 ```
