@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import React, { useState } from 'react'
 import BoxFileField, { BoxFileFieldProps } from './BoxFileField'
 import { Image, ImageProps, Box } from '@chakra-ui/react'
@@ -6,7 +7,7 @@ import { useFieldState } from '../../hooks'
 import BoxFile from '../BoxFile'
 
 // @ts-ignore
-interface ImageFileFieldProps extends BoxFileFieldProps {
+interface ImageFileFieldProps extends Partial<BoxFileFieldProps> {
   name: string
   label?: string
   _image?: ImageProps

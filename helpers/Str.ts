@@ -1,6 +1,6 @@
 class Str {
   public slug(value?: string) {
-    if (!value) return value
+    if (!value) return value || ''
     return value
       .toString() // Cast to string
       .toLowerCase() // Convert the string to lowercase letters

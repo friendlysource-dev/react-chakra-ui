@@ -9,7 +9,8 @@ import {
   ModalProps as ModalChakraProps,
   ModalContentProps,
   ModalFooterProps,
-  ModalBodyProps
+  ModalBodyProps,
+  useColorModeValue
 } from '@chakra-ui/react'
 import React from 'react'
 import { Col, Row, TextMini } from '..'
@@ -36,19 +37,26 @@ const Modal: React.FC<ModalProps> = ({
   _body
 }) => {
   const { onClose, isOpen } = useDisclosure(name)
+  const [bg, color] = useColorModeValue(['white', 'black'], ['gray.900', 'white'])
 
   return (
     <div>
       <ModalChakra isOpen={isOpen} onClose={onClose} {..._modal}>
         <ModalOverlay />
-        <ModalContent rounded="2xl" bg="gray.800" {..._content}>
+        <ModalContent
+          pos="relative"
+          rounded="sm"
+          bg={bg}
+          color={color}
+          {..._content}
+        >
           <Row>
             <Col>
               {title && <ModalHeader>{title}</ModalHeader>}
               {description && <TextMini>{description}</TextMini>}
             </Col>
           </Row>
-          <ModalCloseButton />
+          <ModalCloseButton zIndex={1000} />
           <ModalBody {..._body}>{children}</ModalBody>
           {_footer && <ModalFooter {..._footer}></ModalFooter>}
         </ModalContent>

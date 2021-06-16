@@ -1,3 +1,4 @@
+export { useDebounce } from './helpers/useDebounce'
 export { useCollect } from './useCollect'
 export { useCollection } from './useCollection'
 export { useDisclosure } from './useDisclosure'

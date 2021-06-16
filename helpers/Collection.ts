@@ -1,4 +1,5 @@
 import { TypedEmitter } from 'tiny-typed-emitter'
+import { Collection as Collect } from 'collect.js'
 
 export class Collection<T = any> extends TypedEmitter<{
   forceUpdate: () => void
@@ -71,6 +72,12 @@ export class Collection<T = any> extends TypedEmitter<{
     return this.collection.find((item) => {
       return this.getPrimaryKey(item) === primaryKey
     })
+  }
+
+  public filter(fn: (collection: Collect<T>) => T[]) {
+    const collect = new Collect(this.collection)
+
+    return fn(collect)
   }
 
   private getPrimaryKey(item: Partial<T>) {

@@ -3,9 +3,12 @@ import { Collection } from '../helpers/Collection'
 import { useDebounce } from './helpers/useDebounce'
 import { Collection as Collect } from 'collect.js'
 
+let timer = setTimeout(() => {}, 0)
+
 export function useCollection<T>(
   collection: Collection<T>,
-  fn?: (collect: Collect<T>) => T[]
+  fn?: (collect: Collect<T>) => T[],
+  deps: any[] = []
 ) {
   const [lastUpdate, setLastUpdate] = useState<number>(0)
   const lastUpdateDebounce = useDebounce(lastUpdate, 500)
@@ -14,10 +17,13 @@ export function useCollection<T>(
     const all = collection.all()
 
     return fn ? fn(new Collect(all)) : all
-  }, [lastUpdateDebounce])
+  }, [lastUpdateDebounce, ...deps])
 
   const onForceUpdate = () => {
-    setLastUpdate(Date.now())
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      setLastUpdate(Date.now())
+    }, 500)
   }
 
   useEffect(() => {
